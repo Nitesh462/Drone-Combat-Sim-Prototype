@@ -156,3 +156,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissileBehaviour
   lifetime: 5
+  explosionPrefab: {fileID: 7403342186307082026, guid: b5d25fb00845053408a7e3a814f1404e, type: 3}
