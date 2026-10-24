@@ -11,6 +11,9 @@ public class EnemyDetection : MonoBehaviour
     private Transform target;
     private bool targetDetected;
 
+    // so other files can read these values
+    public bool TargetDetected => targetDetected;
+    public Transform Target => target;
 
     private void OnTriggerEnter(Collider other)
     {

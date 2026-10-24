@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
@@ -7,21 +8,21 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireRate = 2f;
 
-    [Header("Target Settings")]
-    [SerializeField] private string targetTag = "Player";
-
-    private Transform target;
+    private EnemyDetection enemyDetection;
     private float fireTimer;
+
+    private void Start()
+    {
+        enemyDetection = GetComponent<EnemyDetection>();
+    }
 
     private void Update()
     {
-        if (target == null)
+        if (enemyDetection == null ||
+            !enemyDetection.TargetDetected ||
+            enemyDetection.Target == null)
         {
-            GameObject targetObject = GameObject.FindGameObjectWithTag(targetTag);
-
-            if (targetObject != null)
-                target = targetObject.transform;
-
+            fireTimer = 0f;
             return;
         }
 
@@ -36,8 +37,10 @@ public class EnemyShooting : MonoBehaviour
 
     private void Shoot()
     {
-        if (projectilePrefab == null || firePoint == null || target == null)
+        if (projectilePrefab == null || firePoint == null)
             return;
+
+        Transform target = enemyDetection.Target;
 
         GameObject projectile = Instantiate(
             projectilePrefab,
