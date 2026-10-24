@@ -743,6 +743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneHealth
   maxHealth: 100
+  explosionPrefab: {fileID: 7403342186307082026, guid: b5d25fb00845053408a7e3a814f1404e, type: 3}
 --- !u!1 &1017946562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,7 +2036,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6353965090850378633, guid: d13bb18340ad87b48b5143a914991ebe, type: 3}
   firePoint: {fileID: 1609457312}
   fireRate: 2
-  targetTag: Player
 --- !u!1 &2032036027
 GameObject:
   m_ObjectHideFlags: 0
