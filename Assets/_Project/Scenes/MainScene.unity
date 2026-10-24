@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 978171186}
   - component: {fileID: 978171187}
   - component: {fileID: 978171188}
+  - component: {fileID: 978171189}
   m_Layer: 0
   m_Name: PlayerDrone
   m_TagString: Player
@@ -729,6 +730,19 @@ MonoBehaviour:
   missilePrefab: {fileID: 1836597110784591514, guid: 3c2315540db355b44b7b00cd702e150a, type: 3}
   missileSpawnPoint: {fileID: 2032036028}
   missileSpeed: 25
+--- !u!114 &978171189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978171185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be3f9819943df84185a66608a2dfc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneHealth
+  maxHealth: 100
 --- !u!1 &1017946562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1616,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1609457311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609457312}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1609457312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609457311}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04, y: 0.557, z: 1.234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1933549619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1666494680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1842,7 @@ GameObject:
   - component: {fileID: 1933549621}
   - component: {fileID: 1933549623}
   - component: {fileID: 1933549622}
+  - component: {fileID: 1933549624}
   m_Layer: 0
   m_Name: EnemySoilder
   m_TagString: Untagged
@@ -1898,6 +1944,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 149505126}
+  - {fileID: 1609457312}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1933549620
@@ -1973,6 +2020,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1933549624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933549615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30d6470727156d4086293e037714bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShooting
+  projectilePrefab: {fileID: 6353965090850378633, guid: d13bb18340ad87b48b5143a914991ebe, type: 3}
+  firePoint: {fileID: 1609457312}
+  fireRate: 2
+  targetTag: Player
 --- !u!1 &2032036027
 GameObject:
   m_ObjectHideFlags: 0

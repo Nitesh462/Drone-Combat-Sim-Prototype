@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class DroneController : MonoBehaviour
 {
     // Movement
     private float moveSpeed = 8f;

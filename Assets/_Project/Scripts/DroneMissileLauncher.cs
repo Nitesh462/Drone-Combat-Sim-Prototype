@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class DroneMissileLauncher : MonoBehaviour
 {
     [Header("Missile Settings")]
     [SerializeField] private GameObject missilePrefab;
