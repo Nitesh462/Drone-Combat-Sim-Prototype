@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DroneHealth : MonoBehaviour
 {
@@ -38,8 +39,14 @@ public class DroneHealth : MonoBehaviour
             if (launcher != null)
                 launcher.enabled = false;
 
-            Destroy(gameObject,0.1f);
+            Invoke(nameof(RestartScene), 1f);
+
         }
+    }
+
+    private void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     // Update is called once per frame
     void Update()
