@@ -6,6 +6,7 @@ public class DroneMissileLauncher : MonoBehaviour
     [SerializeField] private GameObject missilePrefab;
     [SerializeField] private Transform missileSpawnPoint;
     [SerializeField] private float missileSpeed = 25f;
+    [SerializeField] private AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +23,8 @@ public class DroneMissileLauncher : MonoBehaviour
 
     private void FireMissile()
     {
+        audioSource.Play();
+
         GameObject missile = Instantiate(
             missilePrefab,
             missileSpawnPoint.position,
