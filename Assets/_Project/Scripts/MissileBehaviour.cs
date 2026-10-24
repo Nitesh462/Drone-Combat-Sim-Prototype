@@ -19,18 +19,20 @@ public class MissileBehaviour : MonoBehaviour
         if (hasExploded)
             return;
 
-        if(collision.gameObject.CompareTag("Target"))
-        {
-            hasExploded=true;
+        hasExploded = true;
 
-            Instantiate(
-                explosionPrefab,
-                transform.position,
-                Quaternion.identity);
+        Instantiate(
+            explosionPrefab,
+            transform.position,
+            Quaternion.identity);
 
+
+        if (collision.gameObject.CompareTag("Target"))
+        {   
             Destroy(collision.gameObject);
-            Destroy(gameObject);
         }
+
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
